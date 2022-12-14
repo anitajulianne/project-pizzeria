@@ -1,6 +1,6 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
-//const { utils } = require("stylelint");
+ 
 
 {
   'use strict';
@@ -98,7 +98,7 @@
       event.preventDefault();
 
       /* find active product (product that has active class) */
-      const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
+      const activeProduct = document.querySelector(select.all.menuProductsActive);
 
       /* if there is active product and it's not thisProduct.element, remove class active from it */
       if(activeProduct != thisProduct.element && activeProduct != null){
