@@ -96,6 +96,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -183,6 +184,19 @@
               price = price - option.price;
             }
           }
+          // find an image that fits .paramId-option
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+
+          // check if found the image
+          if(optionImage){
+
+            //add active
+            if(formData[paramId] && formData[paramId].includes(optionId)){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            } else { //remove active
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }  
         }
 
         // update calculated price in the HTML
