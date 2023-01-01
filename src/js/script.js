@@ -344,7 +344,7 @@
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
     
-    };
+    }
     
   }
 
