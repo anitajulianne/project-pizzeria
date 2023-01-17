@@ -933,6 +933,10 @@ input.error, select.error {
   opacity: 0.4;
 }
 
+.floor-plan .table.selected {
+  background-color: #48b47e;
+}
+
 .floor-plan [data-table="1"] {
   left: 40px;
   top: 40px;

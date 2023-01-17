@@ -173,6 +173,10 @@
       }
   
     }
+
+    &.selected {
+      background-color: rgb(72, 180, 126);
+    }
   }
   
   [data-table="1"] {
