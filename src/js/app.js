@@ -2,10 +2,29 @@ import {settings, select, classNames} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+import Home from './components/Home.js';
 
 
 
 const app = {
+  initHome(){
+    const thisApp = this;
+
+    thisApp.homePage = document.querySelector(select.containerOf.homePage);
+
+    new Home(thisApp.homePage);
+
+    thisApp.homeLinks = document.querySelectorAll(select.home.links);
+
+    for(let link of thisApp.homeLinks){
+      link.addEventListener('click', function(event){
+        event.preventDefault();
+        const linkHref = link.getAttribute('href').replace('#', '');
+        thisApp.activatePage(linkHref);
+      });
+    }
+  },
+
   initBooking(){
     const thisApp = this;
 
@@ -125,6 +144,7 @@ const app = {
     thisApp.initData();
     thisApp.initCart();
     thisApp.initBooking();
+    thisApp.initHome();
   }
     
 };
